@@ -340,16 +340,13 @@ class ambiente(object):
                     self.melhor = copy.deepcopy(self.populacao[0])
                     self.iteracaoSemMelhora = 0
                     self.fitness = self.melhor.fitness
-                    # IMPRIMIR O LABIRINTO EM UMA IMAGEM QUANDO HOUVER MELHORA
-					#self.aux.telinha(self.melhor.labirinto, str(self.melhor.fitness))
+                    self.aux.telinha(self.melhor.labirinto, str(self.melhor.fitness))# IMPRIMIR O LABIRINTO EM UMA IMAGEM QUANDO HOUVER MELHORA
                 else:
                     self.iteracaoSemMelhora += 1
                 self.geracao += 1
                 self.listaGeracoes.append(self.geracao)
                 self.listaFitnessIndividuos.append(self.melhor.fitness)
                 self.mostrarResultados()
-            #else:
-            #    break
         self.aux.telinha(self.populacao[0].labirinto,'ficoAssim')
         plt.xlabel('Geracoes')
         plt.ylabel('Fitness Pop(Verm)/Ind(Azul)')
